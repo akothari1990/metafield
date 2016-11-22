@@ -1,0 +1,50 @@
+<%= link_to "Edit shipment", edit_shipment_path(@shipment) %>&nbsp;|&nbsp;
+<%= link_to "Back to Index", shipments_path %>
+
+<h3>Shipping Information</h3>
+<table style="width:100%; text-align:left;">
+  <tr>
+    <th>Name</th>
+    <th>Country</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+  </tr>
+  <tr>
+    <td><%= @shipment.name %></td>
+    <td><%= @shipment.country %></td>
+    <td><%= @shipment.city %></td>
+    <td><%= @shipment.state %></td>
+    <td><%= @shipment.postal_code %></td>
+  </tr>
+  <tr>
+    <th>Length</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Weight</th>
+    <th>Cylinder?</th>
+  </tr>
+  <tr>
+    <td><%= "#{@shipment.length} centimeters" %></td>
+    <td><%= "#{@shipment.width} centimeters" %></td>
+    <td><%= "#{@shipment.height} centimeters" %></td>
+    <td><%= "#{@shipment.weight} grams" %></td>
+    <td><%= @shipment.cylinder ? "Yes" : "No" %></td>
+  </tr>
+</table>
+
+<h3>Shipping Options</h3>
+<table>
+  <tr>
+    <th>Service Name</th>
+    <th>Price</th>
+  </tr>
+  
+  <% @shipment.fedex_rates.each do |rate| %>
+    <tr>
+      <td><%= rate.service_name %></td>
+      <td><%= number_to_currency(rate.price.to_f / 100) %></td>
+    </tr>
+  <% end %>
+  
+</table>

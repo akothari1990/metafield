@@ -1,0 +1,37 @@
+<h3>Shipments</h3>
+<%= link_to "New Shipment", new_shipment_path %>
+<table style="width:100%; text-align:left;">
+  <thead>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>Name</th>
+    <th>Country</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Postal Code</th>
+    <th>Length</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Weight</th>
+    <th>Cylinder?</th>
+  </thead>
+
+  <tbody>
+    <% @shipments.each do |shipment| %>
+      <tr>
+        <td><%= link_to "View", shipment %></td>
+        <td><%= link_to "Edit", edit_shipment_path(shipment) %></td>
+        <td><%= shipment.name %></td>
+        <td><%= shipment.country %></td>
+        <td><%= shipment.city %></td>
+        <td><%= shipment.state %></td>
+        <td><%= shipment.postal_code %></td>
+        <td><%= "#{shipment.length} centimeters" %></td>
+        <td><%= "#{shipment.width} centimeters" %></td>
+        <td><%= "#{shipment.height} centimeters" %></td>
+        <td><%= "#{shipment.weight} grams" %></td>
+        <td><%= shipment.cylinder ? "Yes" : "No" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
