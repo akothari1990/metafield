@@ -6,11 +6,11 @@ class API::V1::MetafieldsController < ApplicationController
 
 
 	    @order_list = ShopifyAPI::Order.find(:all)
-		puts "==========order list========="
-		puts @order_list.inspect
-		puts "==================="
-		respond_to do |format|
-	      	format.json { render :json => @order_list }
-	  	end	
+		# puts "==========order list========="
+		# puts @order_list.inspect
+		# puts "==================="
+		# respond_to do |format|
+	 #      	format.json { render :json => @order_list }
+	 #  	end	
 	  end
 end
