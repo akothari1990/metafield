@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :shipments
       resources :variants
+      resources :metafields
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
