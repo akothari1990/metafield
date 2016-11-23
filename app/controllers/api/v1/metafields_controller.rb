@@ -5,7 +5,10 @@ class API::V1::MetafieldsController < ApplicationController
 	    shop = ShopifyAPI::Shop.current
 
 
-	    @product_list = ShopifyAPI::Product.find(:all)
+	    @product_list = ShopifyAPI::Product.find(6721712071)
+	    respond_to do |format|
+      		format.json { render :json => @product_list }
+    	end
 		# puts "==========order list========="
 		# puts @order_list.inspect
 		# puts "==================="
