@@ -5,7 +5,7 @@ class API::V1::MetafieldsController < ApplicationController
 	    shop = ShopifyAPI::Shop.current
 
 
-	    @order_list = ShopifyAPI::Order.find(:all)
+	    @product_list = ShopifyAPI::Product.find(:all)
 		# puts "==========order list========="
 		# puts @order_list.inspect
 		# puts "==================="

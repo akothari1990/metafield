@@ -1,2 +1,9 @@
-<%=@order_list.inspect %>
-<h3>my name is anshul</h3>
+<h3>Metafields</h3>
+<ul>
+<% @product_list.each do |product| %>
+  
+    <li><%= product.title %></td>
+  
+ 
+<% end %>
+</ul>
