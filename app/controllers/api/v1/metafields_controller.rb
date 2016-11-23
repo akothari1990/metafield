@@ -5,7 +5,7 @@ class API::V1::MetafieldsController < ApplicationController
 	    shop = ShopifyAPI::Shop.current
 
 
-	    @product_list = ShopifyAPI::Metafield.all(params: {resource: 'products', resource_id: params[:id], fields: 'value'})
+	    @product_list = ShopifyAPI::Metafield.all(params: {resource: 'products', resource_id: params[:id]})
 	    respond_to do |format|
       		format.json { render :json => @product_list }
     	end	
